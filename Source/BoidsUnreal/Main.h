@@ -27,6 +27,6 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-	GameWorld gameWorld = GameWorld_Create();
-	ABoidBody* boidBodys[GAMEWORLD_BOIDSCOUNT];
+	BoidsWorld gameWorld = BoidsWorld_Create();
+	ABoidBody* boidBodys[BOIDSWORLD_BOIDSCOUNT];
 };

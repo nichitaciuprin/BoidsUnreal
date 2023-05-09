@@ -3,13 +3,13 @@
 #include "AABB.h"
 #include "Boid.h"
 
-#define GAMEWORLD_BOIDSCOUNT 300
+#define BOIDSWORLD_BOIDSCOUNT 300
 
-typedef struct GameWorld
+typedef struct BoidsWorld
 {
     AABB aabb;
-    Boid boids[GAMEWORLD_BOIDSCOUNT];
-} GameWorld;
+    Boid boids[BOIDSWORLD_BOIDSCOUNT];
+} BoidsWorld;
 
-GameWorld GameWorld_Create();
-void GameWorld_Update(GameWorld* gameWorld, float deltaTime);
+BoidsWorld BoidsWorld_Create();
+void BoidsWorld_Update(BoidsWorld* gameWorld, float deltaTime);

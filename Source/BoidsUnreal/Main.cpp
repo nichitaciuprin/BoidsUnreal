@@ -9,7 +9,7 @@ AMain::AMain()
 void AMain::BeginPlay()
 {
 	Super::BeginPlay();
-	for (size_t i = 0; i < GAMEWORLD_BOIDSCOUNT; i++)
+	for (size_t i = 0; i < BOIDSWORLD_BOIDSCOUNT; i++)
 	{
 		FVector location = FVector(0.0f, 0.0f, 0.0f);
 		FRotator rotation = FRotator(0.0f, 0.0f, 0.0f);
@@ -20,8 +20,8 @@ void AMain::BeginPlay()
 void AMain::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	GameWorld_Update(&gameWorld,DeltaTime);
-	for (size_t i = 0; i < GAMEWORLD_BOIDSCOUNT; i++)
+	BoidsWorld_Update(&gameWorld,DeltaTime);
+	for (size_t i = 0; i < BOIDSWORLD_BOIDSCOUNT; i++)
 	{
 		float scale = 50;
 		float waverFrequency = 70;
