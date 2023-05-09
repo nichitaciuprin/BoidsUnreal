@@ -12,4 +12,4 @@ typedef struct BoidsWorld
 } BoidsWorld;
 
 BoidsWorld BoidsWorld_Create();
-void BoidsWorld_Update(BoidsWorld* gameWorld, float deltaTime);
+void BoidsWorld_Update(BoidsWorld* boidsWorld, float deltaTime);

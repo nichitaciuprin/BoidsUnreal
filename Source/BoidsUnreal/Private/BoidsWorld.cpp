@@ -2,17 +2,17 @@
 
 BoidsWorld BoidsWorld_Create()
 {
-    BoidsWorld gameWorld;
+    BoidsWorld boidsWorld;
 
     Subgen subgen = Subgen_Create(0);
-    gameWorld.aabb.p0 = {-25,-25};
-    gameWorld.aabb.p1 = { 25, 25};
+    boidsWorld.aabb.p0 = {-25,-25};
+    boidsWorld.aabb.p1 = { 25, 25};
 	for (int i = 0; i < BOIDSWORLD_BOIDSCOUNT; i++)
-		gameWorld.boids[i] = Boid_Create(&gameWorld.aabb,&subgen);
+		boidsWorld.boids[i] = Boid_Create(&boidsWorld.aabb,&subgen);
 
-    return gameWorld;
+    return boidsWorld;
 }
-void BoidsWorld_Update(BoidsWorld* gameWorld, float deltaTime)
+void BoidsWorld_Update(BoidsWorld* boidsWorld, float deltaTime)
 {
-    Boid_Update(gameWorld->boids,BOIDSWORLD_BOIDSCOUNT,&gameWorld->aabb,deltaTime);
+    Boid_Update(boidsWorld->boids,BOIDSWORLD_BOIDSCOUNT,&boidsWorld->aabb,deltaTime);
 }
