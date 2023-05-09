@@ -23,9 +23,14 @@ void AMain::Tick(float DeltaTime)
 	GameWorld_Update(&gameWorld,DeltaTime);
 	for (size_t i = 0; i < GAMEWORLD_BOIDSCOUNT; i++)
 	{
-		auto x = gameWorld.boids[i].pos.x*50;
-		auto y = gameWorld.boids[i].pos.y*50;
-		FVector location = FVector(x, y, 0);
+		float scale = 50;
+		float waverFrequency = 70;
+		float waveHeight = 15;
+		auto x = gameWorld.boids[i].pos.x*scale;
+		auto y = gameWorld.boids[i].pos.y*scale;
+		auto z = (FMath::Sin(x/waverFrequency)+FMath::Cos(y/waverFrequency))*waveHeight;
+		// auto z = (FMath::Cos(y/waverFrequency))*waveHeight;
+		FVector location = FVector(x, y, z);
 		FHitResult hit;
 		boidBodys[i]->SetActorLocation(location,false,&hit,ETeleportType::None);
 	}
